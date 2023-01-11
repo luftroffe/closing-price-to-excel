@@ -82,7 +82,7 @@ def clpr_crawling(it):
         print('B/A error with ' + it)
         BA = '-'
 
-    return [price, foreigner, institution, BA]
+    return [price, institution, foreigner, BA]
 
 
 if __name__ == '__main__':
@@ -106,7 +106,7 @@ if __name__ == '__main__':
     pool = multiprocessing.Pool(processes=8)
     data_list = pool.map(clpr_crawling, interests)
 
-    columns = [f'{today.month}/{today.day} 종가', '외국인', '기관', '외국인소진율']
+    columns = [f'{today.month}/{today.day} 종가', '기관', '외국인', '외국인소진율']
 
     print('Collected Price Info')
 
